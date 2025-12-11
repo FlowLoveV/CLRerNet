@@ -45,6 +45,7 @@ RUN mim install mmdet==${MMDET_VERSION}
 RUN pip install -U pip setuptools
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
+RUN pip install "numpy<2.0"
 
 # lane NMS
 COPY --chown=docker libs/models/layers/nms /tmp/nms
